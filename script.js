@@ -51,13 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
       (entries, observerInstance) => {
 
         entries.forEach((entry) => {
-
           if (entry.isIntersecting) {
             entry.target.classList.add("reveal-visible");
-
             observerInstance.unobserve(entry.target);
           }
-
         });
 
       },
@@ -69,6 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealElements.forEach((element) => {
       observer.observe(element);
+    });
+
+  } else {
+
+    revealElements.forEach((element) => {
+      element.classList.add("reveal-visible");
     });
 
   }
@@ -88,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ==================================
-     SOCIAL BUTTON KEYBOARD POLISH
+     BUTTON KEYBOARD EFFECT
   ================================== */
 
   const interactiveButtons = document.querySelectorAll(
@@ -109,6 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+  });
+
+
+  /* ==================================
+     COMING SOON PROJECT
+  ================================== */
+
+  const comingSoonLinks = document.querySelectorAll(".coming-soon");
+
+  comingSoonLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+    });
   });
 
 

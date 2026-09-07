@@ -1168,21 +1168,91 @@ a {
 
 }
 
+/* ==============================
+   PROJECT MEDIA + STATUS
+============================== */
+
+@media (min-width: 1120px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1119px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-card {
+  min-height: 610px;
+}
+
+.project-top {
+  margin-bottom: 18px;
+}
+
 .project-image {
   width: 100%;
-  height: 170px;
-  margin: 18px 0 22px;
-  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 22px;
+  border-radius: 11px;
   overflow: hidden;
-  background: #1f2024;
   border: 1px solid var(--border);
+  background: #17181c;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  padding: 0;
+  object-fit: cover;
 }
 
+.project-image-amazon img {
+  object-position: center;
+}
+
+.project-image-blockchain img,
+.project-image-deep-learning img {
+  object-position: center;
+}
+
+.project-status {
+  margin-top: auto;
+  min-height: 48px;
+  width: 100%;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #4a4b54;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.018);
+  color: #bbb9df;
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-align: center;
+}
+
+.project-status svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  color: #9e9bea;
+}
+
+@media (max-width: 640px) {
+  .project-card {
+    min-height: 0;
+  }
+
+  .project-image {
+    margin-bottom: 20px;
+  }
+
+  .project-status {
+    margin-top: 4px;
+  }
+} 
